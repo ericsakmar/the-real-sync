@@ -6,7 +6,7 @@ import isAfter from "date-fns/isAfter";
 import AppContext from "../AppContext";
 
 const parseTimestamp = version => {
-  const [_, raw] = version.split("_");
+  const [, raw] = version.split("_");
   const timestamp = parse(raw, "yyyy-MM-dd-HH-mm", new Date());
   return timestamp;
 };
