@@ -1,0 +1,139 @@
+body {
+  background-color: ghostwhite;
+}
+
+.app {
+  max-width: 25rem;
+  margin: 2rem auto;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h1 {
+  display: block;
+  font-weight: 200;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: 800;
+  text-align: center;
+}
+
+button {
+  border: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #ccc;
+}
+
+a {
+  color: #2b3856;
+}
+
+.button-main {
+  background-color: #2b3856;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 800;
+  width: 10rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ededed;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  background-color: #fff;
+}
+
+.required {
+  color: tomato;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.songs-list {
+  margin-top: 2rem;
+}
+
+.song-actions {
+  text-align: center;
+}
+
+.version {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.version-details {
+  flex-grow: 1;
+}
+
+.version-name {
+  font-weight: 600;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.version-created-by {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.version-tag {
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-radius: 0.2rem;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.version-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.version-player {
+  flex-grow: 1;
+}
+
+.player {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: spin infinite 3s linear;
+    display: inline-block;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
