@@ -9,6 +9,7 @@ import Songs from "./components/Songs";
 import NewSong from "./components/NewSong";
 import Song from "./components/Song";
 import NewVersion from "./components/NewVersion";
+import Footer from "./components/Footer";
 
 function App() {
   const queryClient = new QueryClient();
@@ -37,6 +38,8 @@ function App() {
               <Route path="/songs/:name" element={<Song />} />
               <Route path="/songs/:name/new-version" element={<NewVersion />} />
             </Routes>
+
+            <Footer />
           </div>
         </BrowserRouter>
       </AppContext.Provider>
