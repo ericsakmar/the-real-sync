@@ -1,29 +1,11 @@
 import { useEffect, useState } from "react";
-
-const getAccessToken = () => {
-  const localAccessToken = window.localStorage.getItem("accessToken");
-
-  if (localAccessToken && localAccessToken !== "null") {
-    return localAccessToken;
-  }
-
-  const params = new URLSearchParams(window.location.hash.replace("#", ""));
-  const urlAccessToken = params.get("access_token");
-
-  return urlAccessToken;
-};
-
-const storeAccessToken = accessToken => {
-  window.localStorage.setItem("accessToken", accessToken);
-};
+import { useAccessToken } from "./useAccessToken";
 
 export const useDropbox = () => {
   const [dbx, setDbx] = useState();
+  const { data: accessToken } = useAccessToken();
 
   useEffect(() => {
-    const accessToken = getAccessToken();
-    storeAccessToken(accessToken);
-
     var dbx = accessToken
       ? new window.Dropbox.Dropbox({
           accessToken,
@@ -34,7 +16,7 @@ export const useDropbox = () => {
         });
 
     setDbx(dbx);
-  }, []);
+  }, [accessToken]);
 
   return dbx;
 };

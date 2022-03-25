@@ -16,7 +16,10 @@ const useSongs = () => {
           songs.slice().sort((a, b) => a.name.localeCompare(b.name))
         ),
     {
-      enabled: dropbox !== null && dropbox !== undefined,
+      enabled:
+        dropbox !== null &&
+        dropbox !== undefined &&
+        dropbox.auth.getAccessToken() !== undefined,
       initialData: []
     }
   );

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import { useDropbox } from "./hooks/useDropbox";
 import Login from "./components/Login";
-import AppContext from "./AppContext";
+import AppContextProvider from "./AppContextProvider";
 import Songs from "./components/Songs";
 import NewSong from "./components/NewSong";
 import Song from "./components/Song";
@@ -13,22 +13,22 @@ import Footer from "./components/Footer";
 
 function App() {
   const queryClient = new QueryClient();
-  const dropbox = useDropbox();
-  const isAuthenticated = dropbox && dropbox.auth && dropbox.auth.accessToken;
+  // const dropbox = useDropbox();
+  // const isAuthenticated = dropbox && dropbox.auth && dropbox.auth.accessToken;
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AppContext.Provider value={dropbox}>
+      <AppContextProvider>
         <BrowserRouter>
           <div className="app">
             <header className="header">
               <h1>The Real Sync</h1>
 
-              {isAuthenticated && (
+              {/* isAuthenticated && (
                 <div>
                   <Link to="/songs">Songs</Link>
                 </div>
-              )}
+              ) */}
             </header>
 
             <Routes>
@@ -42,7 +42,7 @@ function App() {
             <Footer />
           </div>
         </BrowserRouter>
-      </AppContext.Provider>
+      </AppContextProvider>
     </QueryClientProvider>
   );
 }

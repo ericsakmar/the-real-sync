@@ -1,11 +1,19 @@
-import { useDropbox } from "../hooks/useDropbox";
+import { useNavigate } from "react-router-dom";
+import useIsAuthenticated from "../hooks/useIsAuthenticated";
+import useLogOut from "../hooks/useLogOut";
 
 function Footer() {
-  const dropbox = useDropbox();
-  const isAuthenticated = dropbox && dropbox.auth && dropbox.auth.accessToken;
+  const isAuthenticated = useIsAuthenticated();
+  const logOut = useLogOut();
+
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
-    //
+    logOut.mutate(undefined, {
+      onSuccess: () => {
+        navigate("/");
+      }
+    });
   };
 
   return (
