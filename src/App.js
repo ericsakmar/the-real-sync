@@ -1,8 +1,7 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { useDropbox } from "./hooks/useDropbox";
 import Login from "./components/Login";
 import AppContextProvider from "./AppContextProvider";
 import Songs from "./components/Songs";
@@ -14,8 +13,6 @@ import Header from "./components/Header";
 
 function App() {
   const queryClient = new QueryClient();
-  // const dropbox = useDropbox();
-  // const isAuthenticated = dropbox && dropbox.auth && dropbox.auth.accessToken;
 
   return (
     <QueryClientProvider client={queryClient}>
