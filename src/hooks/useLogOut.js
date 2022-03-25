@@ -1,7 +1,4 @@
-import { useContext } from "react";
 import { useMutation, useQueryClient } from "react-query";
-
-import AppContext from "../AppContext";
 
 const logOut = async () => {
   window.localStorage.removeItem("accessToken");

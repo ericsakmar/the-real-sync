@@ -10,6 +10,7 @@ import NewSong from "./components/NewSong";
 import Song from "./components/Song";
 import NewVersion from "./components/NewVersion";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   const queryClient = new QueryClient();
@@ -21,15 +22,7 @@ function App() {
       <AppContextProvider>
         <BrowserRouter>
           <div className="app">
-            <header className="header">
-              <h1>The Real Sync</h1>
-
-              {/* isAuthenticated && (
-                <div>
-                  <Link to="/songs">Songs</Link>
-                </div>
-              ) */}
-            </header>
+            <Header />
 
             <Routes>
               <Route path="/" element={<Login />} />
