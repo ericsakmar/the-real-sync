@@ -13,7 +13,7 @@ function Songs() {
     <>
       <div className="song-actions">
         <Link to="/songs/new">
-          <button className="button-main">New Song</button>
+          <button className="button-main">Add New Song</button>
         </Link>
       </div>
 

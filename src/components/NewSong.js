@@ -20,11 +20,13 @@ function NewSong() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <TextField name="name" label="Name" />
+        <TextField name="name" label="Name:" />
 
-        <button className="button-main" type="submit">
-          Create
-        </button>
+        <div className="song-actions">
+          <button className="button-main" type="submit">
+            Create
+          </button>
+        </div>
       </form>
     </FormProvider>
   );

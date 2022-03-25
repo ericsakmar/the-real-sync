@@ -134,6 +134,11 @@ input {
   width: 100%;
 }
 
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .spin {
     animation: spin infinite 3s linear;

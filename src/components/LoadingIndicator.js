@@ -2,7 +2,7 @@ import LoadingIcon from "./LoadingIcon";
 
 function LoadingIndicator() {
   return (
-    <div className="song-actions">
+    <div className="loading">
       <LoadingIcon />
     </div>
   );
